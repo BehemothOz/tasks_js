@@ -5,11 +5,11 @@
 */
 
 let without = (coll, ...arg) => {
-  
+  return coll.reduce((acc, elem) => arg.includes(elem) ? acc : [...acc, elem], [])
 }
 
 /*
   Testing
 */
 
-without([2, 1, 2, 3], 1, 2, 5); // [3]
+console.log(without([2, 1, 2, 3], 1, 2, 5)); // [3]
